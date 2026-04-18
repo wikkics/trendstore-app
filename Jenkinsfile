@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/wikkics/trendstore-app.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -20,6 +14,5 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
     }
 }
