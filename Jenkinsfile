@@ -3,16 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
+        stage('Build Docker Image') {
             steps {
-                sh 'npm install'
+                sh 'docker build -t trendstore-app .'
             }
         }
 
-        stage('Build React App') {
-            steps {
-                sh 'npm run build'
-            }
-        }
     }
 }
